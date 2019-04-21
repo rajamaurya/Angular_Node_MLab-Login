@@ -1,0 +1,31 @@
+<div class = "container" *ngIf = "exitItemFormPage">
+        <h1>User's Item Form</h1>
+        <form (submit) = "saveFormData(item)">
+           <div class = "form-group">
+              <label for = "id">ID</label>
+              <input type = "text" class = "form-control" id = "id" required
+                 [(ngModel)] = "item.id" name = "id">
+           </div>
+           <div class = "form-group">
+                <label for = "userId">Item Id</label>
+                <input type = "text" class = "form-control" id = "userId"
+                   [(ngModel)] = "item.userId" name = "userId">
+             </div>
+           <div class = "form-group">
+              <label for = "title">Title</label>
+              <input type = "text" class = "form-control" id = "title"
+                 [(ngModel)] = "item.title" name = "title">
+           </div>
+           <div class = "form-group">
+                <label for = "body">Description</label>
+                <input type = "text" class = "form-control" id = "body"
+                   [(ngModel)] = "item.body" name = "body">
+             </div>
+           
+           <button class="btn btn-primary">save</button>
+           
+        
+        </form>
+        <button class="btn btn-danger" [disabled]= "isdisable" (click) = "exitItemForm()" >exit</button>
+     </div>
+

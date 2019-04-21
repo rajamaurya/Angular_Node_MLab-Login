@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <div class="panel panel-primary" >
+            <div class = "panel-heading">
+                    <h3 class="panel-title">Users List</h3>
+            </div>
+            <table class="table table-hover" id="ulistTable">
+                 <thead>
+                     <tr>
+                         <th>Id</th>
+                         <th>Item Id</th>
+                         <th>Title</th>
+                         <th>Description</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                      <tr *ngFor = "let user of itemList" (click) = "sendUserDetail(user.id)">
+                                <td>{{user.id}}</td>
+                                <td>{{user.name}}</td>
+                                <td>{{user.username}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.phone}}</td>
+                                
+                      </tr>
+                      <tr><td><app-users-details></app-users-details></td></tr>
+                 </tbody>
+                 
+            </table>
+  </div>
